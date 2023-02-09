@@ -3,7 +3,10 @@ package edu.jsu.mcis.cs310;
 import com.github.cliftonlabs.json_simple.*;
 import com.opencsv.*;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
 import java.io.StringReader;
+import java.io.StringWriter;
 import java.util.*;
 
 public class Converter {
@@ -115,7 +118,9 @@ public class Converter {
 
         try {
             // INSERT YOUR CODE HERE
-
+            StringWriter writer = new StringWriter();
+            CSVWriter csvWriter = new CSVWriter(writer, ',', '"', '\\', "\n");
+            result = writer.toString();
         }
         catch (Exception e) {
             e.printStackTrace();
